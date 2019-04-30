@@ -6,7 +6,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 from flask_session import Session
-from ..config import configs
+from config import configs
 
 # 数据库配置
 db = SQLAlchemy()
@@ -43,7 +43,7 @@ def create_app(config_name):
     CSRFProtect(app)
     Session(app)
     #注册蓝图
-    from news.info.modules.index import index_blue
+    from info.modules.index import index_blue
     app.register_blueprint(index_blue)
 
     return app
