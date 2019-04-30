@@ -1,5 +1,3 @@
-from flask import Flask
-
 from news.info import create_app,db
 from flask_migrate import Migrate,MigrateCommand
 from flask_script import Manager
@@ -14,10 +12,6 @@ Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
 
-@app.route('/index')
-def index():
-    return 'index'
-
 if __name__ == '__main__':
-    app.run()
+    #如果pycharm启动需要配置runserver
     manager.run()

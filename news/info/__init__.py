@@ -42,5 +42,8 @@ def create_app(config_name):
     # 开启csrf
     CSRFProtect(app)
     Session(app)
+    #注册蓝图
+    from news.info.modules.index import index_blue
+    app.register_blueprint(index_blue)
 
     return app
